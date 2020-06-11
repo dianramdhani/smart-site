@@ -1,12 +1,12 @@
 <div
   class="d-md-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30"
 >
-  <h4 class="mg-b-0 tx-spacing--1">Site Villa Bandung Indah</h4>
+  <h1 class="mg-b-0 tx-spacing--1">Villa Bandung Indah</h1>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-style1 mg-b-10">
       <li class="breadcrumb-item">Sites</li>
       <li class="breadcrumb-item active" aria-current="page">
-        Site Villa Bandung Indah
+        Villa Bandung Indah
       </li>
     </ol>
   </nav>
@@ -92,11 +92,14 @@
 </div>
 
 <button
-  class="btn btn-link tx-bold"
+  class="btn btn-link tx-bold d-flex align-items-center"
   type="button"
   (click)="collapse.powerMonitor = !collapse.powerMonitor"
   [attr.aria-expanded]="!collapse.powerMonitor"
 >
+  <span class="material-icons tx-18 mr-1">
+    {{ collapse.powerMonitor ? "keyboard_arrow_right" : "keyboard_arrow_down" }}
+  </span>
   Power Monitoring
 </button>
 <div [ngbCollapse]="collapse.powerMonitor">
