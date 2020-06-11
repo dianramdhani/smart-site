@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "smart-site"
+    }
+  },
+  "defaultProject": "smart-site",
+  "cli": {
+    "analytics": false
+  }
 }
