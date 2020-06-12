@@ -1,0 +1,159 @@
+<div
+  class="d-md-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30"
+>
+  <h1 class="mg-b-0 tx-spacing--1">Villa Bandung Indah</h1>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+      <li class="breadcrumb-item">Sites</li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Villa Bandung Indah
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<!-- <iframe
+  src="https://smart-site.tritronik.com/d/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk"
+  width="100%"
+  height="2000"
+  frameborder="0"
+  frameborder="0"
+></iframe> -->
+
+<div class="row row-xs mb-2">
+  <div class="col-lg">
+    <div class="card">
+      <iframe
+        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591853774170&to=1591857374171&theme=light&panelId=75"
+        width="100%"
+        height="350"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="col-lg">
+    <iframe
+      src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591853855351&to=1591857455351&theme=light&panelId=92"
+      width="100%"
+      height="150"
+      frameborder="0"
+    ></iframe>
+
+    <div class="card">
+      <iframe
+        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591854145587&to=1591857745587&theme=light&panelId=6"
+        width="100%"
+        height="193"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="row row-xs">
+  <div class="col-lg-3">
+    <div class="card mb-2">
+      <iframe
+        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591854515460&to=1591858115460&theme=light&panelId=12"
+        width="100%"
+        height="200"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="col-lg">
+    <div class="card mb-2">
+      <iframe
+        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591854650660&to=1591858250660&theme=light&panelId=27"
+        width="100%"
+        height="200"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="row row-xs">
+  <div class="col-lg-3">
+    <div class="card mb-2">
+      <iframe
+        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855063359&to=1591858663359&theme=light&panelId=47"
+        width="100%"
+        height="200"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="col-lg">
+    <div class="card mb-2">
+      <iframe
+        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855102493&to=1591858702493&theme=light&panelId=80"
+        width="100%"
+        height="200"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<button
+  class="btn btn-link tx-bold d-flex align-items-center"
+  type="button"
+  (click)="collapse.powerMonitor = !collapse.powerMonitor"
+  [attr.aria-expanded]="!collapse.powerMonitor"
+>
+  <span class="material-icons tx-18 mr-1">
+    {{ collapse.powerMonitor ? "keyboard_arrow_right" : "keyboard_arrow_down" }}
+  </span>
+  Power Monitoring
+</button>
+<div [ngbCollapse]="collapse.powerMonitor">
+  <div class="row row-xs">
+    <div class="col-lg-6">
+      <div class="card mb-2">
+        <iframe
+          src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855295192&to=1591858895192&theme=light&panelId=77"
+          width="100%"
+          height="250"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card mb-2">
+        <iframe
+          src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855406374&to=1591859006375&theme=light&panelId=82"
+          width="100%"
+          height="250"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card mb-2">
+        <iframe
+          src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855696027&to=1591859296027&theme=light&panelId=84"
+          width="100%"
+          height="300"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card mb-2">
+        <iframe
+          src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855604234&to=1591859204234&theme=light&panelId=79"
+          width="100%"
+          height="300"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
