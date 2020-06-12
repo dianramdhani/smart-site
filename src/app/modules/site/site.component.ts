@@ -13,32 +13,51 @@ export class SiteComponent implements OnInit {
   @ViewChild(DaterangepickerDirective, { static: true })
   pickerDirective: DaterangepickerDirective;
 
-  selected = {
-    startDate: moment('2015-11-18T00:00Z'),
-    endDate: moment('2015-11-26T00:00Z'),
+  readonly ranges = {
+    Today: [moment(), moment()],
+    Yesterday: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+    'This Month': [moment().startOf('month'), moment().endOf('month')],
+    'Last Month': [
+      moment().subtract(1, 'month').startOf('month'),
+      moment().subtract(1, 'month').endOf('month'),
+    ],
+    'Last 3 Month': [
+      moment().subtract(3, 'month').startOf('month'),
+      moment().subtract(1, 'month').endOf('month'),
+    ],
   };
 
-  ngModelChange(e): void {
-    console.log(e);
-  }
+  selected = this.ranges.Today;
 
-  change(e): void {
-    console.log(e);
-  }
+  invalidDates: moment.Moment[] = [];
+  isInvalidDate = (m: moment.Moment) => {
+    return this.invalidDates.some((d) => d.isSame(m, 'day'));
+  };
 
-  open(): void {
-    this.pickerDirective.open();
-  }
-
-  clear(e): void {
-    this.selected = null;
-  }
+  tooltips = [
+    { date: moment(), text: 'Today is just unselectable' },
+    { date: moment().add(2, 'days'), text: 'Yeeeees!!!' },
+  ];
+  isTooltipDate = (m: moment.Moment) => {
+    const tooltip = this.tooltips.find((tt) => tt.date.isSame(m, 'day'));
+    if (tooltip) {
+      return tooltip.text;
+    } else {
+      return false;
+    }
+  };
 
   collapse = {
     powerMonitor: false,
   };
 
   constructor() {}
+
+  timeChange(event: Event) {
+    console.log(this.selected);
+  }
 
   ngOnInit(): void {}
 
