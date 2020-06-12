@@ -2,14 +2,20 @@
   class="d-md-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30"
 >
   <h1 class="mg-b-0 tx-spacing--1">Villa Bandung Indah</h1>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+  <nav aria-label="breadcrumb mg-b-10">
+    <ol class="breadcrumb breadcrumb-style1 mg-b-5">
       <li class="breadcrumb-item">Sites</li>
       <li class="breadcrumb-item active" aria-current="page">
         Villa Bandung Indah
       </li>
     </ol>
+    time picker
   </nav>
+</div>
+
+<div>
+  <ngx-daterangepicker-material (chosenDate)="chosenDate($event)">
+  </ngx-daterangepicker-material>
 </div>
 
 <!-- <iframe
