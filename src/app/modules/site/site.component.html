@@ -26,12 +26,8 @@
         [showClearButton]="true"
         [showCancel]="true"
         [linkedCalendars]="true"
-        [isTooltipDate]="isTooltipDate"
-        [isInvalidDate]="isInvalidDate"
-        [locale]="{ applyLabel: 'Done' }"
         [keepCalendarOpeningWithRange]="true"
         [showRangeLabelOnInput]="true"
-        [locale]="{ applyLabel: 'Done', firstDay: 1 }"
       />
     </mat-form-field>
   </nav>
@@ -40,6 +36,7 @@
 <div class="row row-xs mb-2">
   <div class="col-lg">
     <div class="card">
+      <!-- site information -->
       <iframe
         src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591853774170&to=1591857374171&theme=light&panelId=75"
         width="100%"
@@ -50,6 +47,7 @@
   </div>
 
   <div class="col-lg">
+    <!-- alert summary -->
     <iframe
       src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591853855351&to=1591857455351&theme=light&panelId=92"
       width="100%"
@@ -58,6 +56,7 @@
     ></iframe>
 
     <div class="card">
+      <!-- alarm view -->
       <iframe
         src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591854145587&to=1591857745587&theme=light&panelId=6"
         width="100%"
@@ -71,8 +70,17 @@
 <div class="row row-xs">
   <div class="col-lg-3">
     <div class="card mb-2">
+      <!-- energy consumption pln -->
       <iframe
-        src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591854515460&to=1591858115460&theme=light&panelId=12"
+        [src]="
+          srcUpdater(
+            'https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=' +
+              selected.startDate.valueOf() +
+              '&to=' +
+              selected.endDate.valueOf() +
+              '&theme=light&panelId=12'
+          )
+        "
         width="100%"
         height="200"
         frameborder="0"
@@ -82,6 +90,7 @@
 
   <div class="col-lg">
     <div class="card mb-2">
+      <!-- energy consumption graph pln -->
       <iframe
         src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591854650660&to=1591858250660&theme=light&panelId=27"
         width="100%"
@@ -95,6 +104,7 @@
 <div class="row row-xs">
   <div class="col-lg-3">
     <div class="card mb-2">
+      <!-- energy consumption genset -->
       <iframe
         src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855063359&to=1591858663359&theme=light&panelId=47"
         width="100%"
@@ -106,6 +116,7 @@
 
   <div class="col-lg">
     <div class="card mb-2">
+      <!-- energy consumption graph genset -->
       <iframe
         src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855102493&to=1591858702493&theme=light&panelId=80"
         width="100%"
@@ -131,6 +142,7 @@
   <div class="row row-xs">
     <div class="col-lg-6">
       <div class="card mb-2">
+        <!-- ac power monitor -->
         <iframe
           src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855295192&to=1591858895192&theme=light&panelId=77"
           width="100%"
@@ -142,6 +154,7 @@
 
     <div class="col-lg-6">
       <div class="card mb-2">
+        <!-- dc rectifier -->
         <iframe
           src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855406374&to=1591859006375&theme=light&panelId=82"
           width="100%"
@@ -153,6 +166,7 @@
 
     <div class="col-lg-6">
       <div class="card mb-2">
+        <!-- genset -->
         <iframe
           src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855696027&to=1591859296027&theme=light&panelId=84"
           width="100%"
@@ -164,6 +178,7 @@
 
     <div class="col-lg-6">
       <div class="card mb-2">
+        <!-- battery monitor -->
         <iframe
           src="https://smart-site.tritronik.com/d-solo/OiC65bkGk/dashboard-site?orgId=2&var-device_id=f6b2188b-e62f-4a83-a7c6-c55b349aa892&var-site_name=Site%20Villa%20Bandung%20Indah&kiosk&from=1591855604234&to=1591859204234&theme=light&panelId=79"
           width="100%"

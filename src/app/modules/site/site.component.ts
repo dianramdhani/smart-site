@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DaterangepickerDirective } from 'ngx-daterangepicker-material';
 import * as moment from 'moment';
 import { MatFormFieldControl } from '@angular/material/form-field';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-site',
@@ -29,34 +30,22 @@ export class SiteComponent implements OnInit {
     ],
   };
 
-  selected = this.ranges.Today;
-
-  invalidDates: moment.Moment[] = [];
-  isInvalidDate = (m: moment.Moment) => {
-    return this.invalidDates.some((d) => d.isSame(m, 'day'));
+  selected = {
+    startDate: this.ranges.Today[0],
+    endDate: this.ranges.Today[1],
   };
 
-  tooltips = [
-    { date: moment(), text: 'Today is just unselectable' },
-    { date: moment().add(2, 'days'), text: 'Yeeeees!!!' },
-  ];
-  isTooltipDate = (m: moment.Moment) => {
-    const tooltip = this.tooltips.find((tt) => tt.date.isSame(m, 'day'));
-    if (tooltip) {
-      return tooltip.text;
-    } else {
-      return false;
-    }
-  };
+  viewSelected = this.selected;
 
   collapse = {
     powerMonitor: false,
   };
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {}
 
   timeChange(event: Event) {
     console.log(this.selected);
+    this.viewSelected = this.selected;
   }
 
   ngOnInit(): void {}
@@ -64,4 +53,6 @@ export class SiteComponent implements OnInit {
   chosenDate(event: Event) {
     console.log(event);
   }
+
+  srcUpdater = this.sanitizer.bypassSecurityTrustResourceUrl;
 }
