@@ -7,9 +7,10 @@ import { CoreModule } from '@app/core.module';
 import { DataModule } from '@data/data.module';
 import { SharedModule } from '@shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ContentLayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
